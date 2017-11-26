@@ -1,4 +1,8 @@
 # Камера
+import pygame
+from settings import SIZE
+
+
 class Camera:
     def __init__(self, camera_func, width, height):
         self.camera_func = camera_func
@@ -10,9 +14,10 @@ class Camera:
     def update(self, target):
         self.state = self.camera_func(self.state, target.rect)
 
+
 def camera_func(camera, target_rect):
-    l = -target_rect.x + SIZE[0]/2
-    t = -target_rect.y + SIZE[1]/2
+    l = -target_rect.x + SIZE[0] / 2
+    t = -target_rect.y + SIZE[1] / 2
     w, h = camera.width, camera.height
 
     l = min(0, l)
@@ -22,7 +27,4 @@ def camera_func(camera, target_rect):
 
     return pygame.Rect(l, t, w, h)
 
-total_titls_width = len(titls[0])*40
-total_titls_height = len(titls)*40
-
-camera = Camera(camera_func, total_titls_width, total_titls_height)
+# camera = Camera(camera_func, total_titls_width, total_titls_height)

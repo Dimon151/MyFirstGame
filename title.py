@@ -3,7 +3,8 @@
 from pygame.sprite import Sprite
 from pygame.image import load
 
-#pygame.init()
+
+# pygame.init()
 
 class City(Sprite):
     def __init__(self, x, y):
@@ -12,8 +13,10 @@ class City(Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y
+
     def draw(self, surf):
         surf.blit(self.image, (self.rect.x, self.rect.y))
+
 
 class Desert(Sprite):
     def __init__(self, x, y):
@@ -23,6 +26,7 @@ class Desert(Sprite):
         self.rect.x = x
         self.rect.y = y
 
+
 class Montans1(Sprite):
     def __init__(self, x, y):
         Sprite.__init__(self)
@@ -30,6 +34,7 @@ class Montans1(Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y
+
 
 class Montans2(Sprite):
     def __init__(self, x, y):
